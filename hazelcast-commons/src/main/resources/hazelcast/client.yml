@@ -1,0 +1,31 @@
+hazelcast:
+  client:
+    event:
+      queue:
+        capacity: 1000000
+    allow:
+      invocations:
+        when:
+          disconnected: true
+    heartbeat:
+      interval: 5000
+      timeout: 60000
+    responsequeue:
+      idlestrategy: block
+    statistics:
+      enabled: false
+    invocation:
+      timeout:
+        seconds: 3
+  logging:
+    type: slf4j
+
+hzconfig:
+  hazelcast:
+    connectionattemptlimit: 2147483647
+    connectionattemptperiod: 5000
+    connectiontimeout: 5000
+    redooperation: true
+    serverips: localhost:5701,localhost:5702,localhost:5703
+    smartrouting: true
+    islistenerreq: true
